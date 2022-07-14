@@ -1,9 +1,47 @@
-<p *ngFor="let stockSelected of selectedStocks">
-  Options selected: {{ stockSelected }}
-</p>
+<div class="stock-list-panel">
+  <input id="stocksSelected" value="{{selectedStockSymbols}}" type="hidden">
+  <div>
+    <mat-form-field class="list-form-field" appearance="fill">
+      <mat-label>Number of stocks</mat-label>
+      <input matInput type="number" [(ngModel)]="noOfStocks" (ngModelChange)="noOfStocksChanged()">
+    </mat-form-field>  
+      <mat-form-field class="list-form-field" appearance="fill">
+      <mat-label>Starting From</mat-label>
+      <input matInput type="number" [(ngModel)]="startingFrom" (ngModelChange)="startingFromChanged()">
+    </mat-form-field>    
+  </div>
 
-<mat-selection-list #stockList dense>
-  <mat-list-option *ngFor="let stock of stocks" (click)="stockClicked(stock)">
-    {{ stock.CompanyName }}
-  </mat-list-option>
-</mat-selection-list>
+  <mat-card class="card-content">
+    <div>
+      <mat-form-field class="list-form-field" appearance="fill">
+        <mat-label>Search Stock</mat-label>
+        <input matInput type="text" [(ngModel)]="filterValue" (ngModelChange)="filterStocks()">
+        <button *ngIf="filterValue" matSuffix mat-icon-button aria-label="Clear" (click)="clearFilter()">
+          <mat-icon aria-hidden="false" aria-label="Example home icon">close</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+      <mat-card-content>
+      <table>
+        <thead>
+          <tr>
+            <th >  </th>
+            <th > Company Name!! </th>
+            <th > Industry </th>
+            <th > Symbol </th>
+          </tr>  
+        </thead>
+        <tbody>
+          <tr *ngFor="let stock of filteredStocks">
+            <td > 
+              <mat-checkbox type="checkbox" [(ngModel)]="stock.selected" (ngModelChange)="noOfStocksChanged()"></mat-checkbox> 
+            </td>
+            <td > {{stock.CompanyName}} </td>
+            <td > {{stock.Industry}} </td>
+            <td > {{stock.Symbol}} </td>
+          </tr>  
+        </tbody>
+      </table>
+    </mat-card-content>
+  </mat-card>
+</div>

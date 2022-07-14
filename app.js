@@ -13,7 +13,8 @@ const {app, BrowserWindow} = require('electron')
           preload: path.join(__dirname, 'preload.js')
         }
       })
-
+      mainWindow.maximize();
+      mainWindow.show();
       mainWindow.loadURL(
         url.format({
           pathname: path.join(__dirname, `/dist/stock-graph-analyser/index.html`),
