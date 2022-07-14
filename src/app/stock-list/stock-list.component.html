@@ -1,0 +1,9 @@
+<p *ngFor="let stockSelected of selectedStocks">
+  Options selected: {{ stockSelected }}
+</p>
+
+<mat-selection-list #stockList dense>
+  <mat-list-option *ngFor="let stock of stocks" (click)="stockClicked(stock)">
+    {{ stock.CompanyName }}
+  </mat-list-option>
+</mat-selection-list>
