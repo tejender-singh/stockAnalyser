@@ -59,7 +59,7 @@ executeAutomation = async(stocks, username, password, website) =>{
   } else if(website === sites.screener){
     await browser.url('https://www.screener.in/');
     if(username && password){
-      await loginIntoTradeView(browser, username, password);
+      // await loginIntoScreener(browser, username, password);
     }
     websiteUrl = 'https://www.screener.in/company/'
   }
@@ -102,3 +102,20 @@ loginIntoTradeView = async (browser, username, password) => {
 
 }
 
+loginIntoScreener = async(browser, username, password) =>{
+  const userButton = await browser.$("button account");
+  await userButton.click();
+  await browser.pause(1000);
+  
+  const email = await browser.$("//input[@name='username']");
+  await email.setValue(username);
+  await browser.pause(1000);
+
+  const passwordField = await browser.$("//input[@name='password']");
+  await passwordField.setValue(password);
+  await browser.pause(1000);
+
+  const signin = await browser.$("//button[@type='submit']");
+  await signin.click();
+  await browser.pause(1000);  
+}
