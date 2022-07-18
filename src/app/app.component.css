@@ -1,0 +1,27 @@
+.app-root {
+  height: 100%;
+  max-height: 100%;
+  /* overflow: hidden; */
+}
+
+.bottom-panel {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-align: center;
+  background-color: white;
+  border-top: solid #ccc;
+}
+
+.bottom-panel-content {
+  display: inline-block;
+  width: 50%;
+  vertical-align: top;
+}
+
+.stock-list-content {
+  padding-bottom: 15%;
+}

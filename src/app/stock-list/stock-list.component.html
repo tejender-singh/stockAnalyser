@@ -1,47 +1,64 @@
 <div class="stock-list-panel">
   <input id="stocksSelected" value="{{selectedStockSymbols}}" type="hidden">
-  <div>
+  <div class="stocks-header">
+
+    <h4><b> STEP 1 - Select stocks you want to analyse: </b></h4>
+    <span>Search a stock</span>
+    <mat-form-field class="list-form-field" appearance="fill">
+      <mat-label>Search Stock</mat-label>
+      <input matInput type="text" [(ngModel)]="filterValue" (ngModelChange)="filterStocks()">
+      <button *ngIf="filterValue" matSuffix mat-icon-button aria-label="Clear" (click)="clearFilter()">
+        <mat-icon aria-hidden="false" aria-label="Example home icon">close</mat-icon>
+      </button>
+    </mat-form-field>
+
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>OR</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+    Select a range of stocks
     <mat-form-field class="list-form-field" appearance="fill">
       <mat-label>Number of stocks</mat-label>
       <input matInput type="number" [(ngModel)]="noOfStocks" (ngModelChange)="noOfStocksChanged()">
-    </mat-form-field>  
-      <mat-form-field class="list-form-field" appearance="fill">
-      <mat-label>Starting From</mat-label>
-      <input matInput type="number" [(ngModel)]="startingFrom" (ngModelChange)="startingFromChanged()">
     </mat-form-field>    
+    <mat-form-field class="list-form-field" appearance="fill">
+      <mat-label>Starting From index</mat-label>
+      <input matInput type="number" [(ngModel)]="startingFrom" (ngModelChange)="startingFromChanged()">
+    </mat-form-field>  
+
   </div>
 
-  <mat-card class="card-content">
-    <div>
-      <mat-form-field class="list-form-field" appearance="fill">
-        <mat-label>Search Stock</mat-label>
-        <input matInput type="text" [(ngModel)]="filterValue" (ngModelChange)="filterStocks()">
-        <button *ngIf="filterValue" matSuffix mat-icon-button aria-label="Clear" (click)="clearFilter()">
-          <mat-icon aria-hidden="false" aria-label="Example home icon">close</mat-icon>
-        </button>
-      </mat-form-field>
+  <!-- <mat-card class="card-content"> -->
+    <div class="stock-list">
+      <!-- <mat-card-content> -->
+        <table>
+          <thead>
+            <tr>
+          
+            </tr>
+            <tr>
+              <th class="header"> Index </th>
+              <th class="header"> Company Name </th>
+              <th class="header"> Industry </th>
+              <th class="header"> Symbol </th>
+            </tr>  
+          </thead>
+          <tbody>
+            <tr *ngFor="let stock of filteredStocks">
+              <td > 
+                <mat-checkbox type="checkbox" [(ngModel)]="stock.selected" (ngModelChange)="noOfStocksChanged()"></mat-checkbox> 
+              </td>
+              <td > {{stock.CompanyName}} </td>
+              <td > {{stock.Industry}} </td>
+              <td > {{stock.Symbol}} </td>
+            </tr>  
+            <tr *ngIf="filteredStocks.length===0">
+              <td >  </td>
+              <td > <b>No stocks found</b> </td>
+              <td >  </td>
+              <td >  </td>
+            </tr>  
+          </tbody>
+        </table>
+      <!-- </mat-card-content>
+    </mat-card> -->
+  
     </div>
-      <mat-card-content>
-      <table>
-        <thead>
-          <tr>
-            <th >  </th>
-            <th > Company Name!! </th>
-            <th > Industry </th>
-            <th > Symbol </th>
-          </tr>  
-        </thead>
-        <tbody>
-          <tr *ngFor="let stock of filteredStocks">
-            <td > 
-              <mat-checkbox type="checkbox" [(ngModel)]="stock.selected" (ngModelChange)="noOfStocksChanged()"></mat-checkbox> 
-            </td>
-            <td > {{stock.CompanyName}} </td>
-            <td > {{stock.Industry}} </td>
-            <td > {{stock.Symbol}} </td>
-          </tr>  
-        </tbody>
-      </table>
-    </mat-card-content>
-  </mat-card>
 </div>

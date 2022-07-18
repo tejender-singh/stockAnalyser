@@ -640,6 +640,11 @@
     "Symbol": "DRREDDY"
   },
   {
+    "CompanyName": "eClerx Services Ltd.",
+    "Industry": "IT",
+    "Symbol": "ECLERX"
+  },
+  {
     "CompanyName": "E.I.D. Parry (India) Ltd.",
     "Industry": "CONSUMER GOODS",
     "Symbol": "EIDPARRY"
@@ -798,6 +803,11 @@
     "CompanyName": "Glenmark Pharmaceuticals Ltd.",
     "Industry": "PHARMA",
     "Symbol": "GLENMARK"
+  },
+  {
+    "CompanyName": "GMR Infrastructure Ltd.",
+    "Industry": "IT",
+    "Symbol": "GMRINFRA"
   },
   {
     "CompanyName": "Godfrey Phillips India Ltd.",
@@ -1378,6 +1388,16 @@
     "CompanyName": "Kaveri Seed Company Ltd.",
     "Industry": "CONSUMER GOODS",
     "Symbol": "KSCL"
+  },
+  {
+    "CompanyName": "Kopran Ltd.",
+    "Industry": "IT",
+    "Symbol": "KOPRAN"
+  },
+  {
+    "CompanyName": "Kirloskar Oil Engines Ltd.",
+    "Industry": "IT",
+    "Symbol": "KIRLOSENG"
   },
   {
     "CompanyName": "Kec International Ltd.",
@@ -2145,6 +2165,11 @@
     "Symbol": "SUZLON"
   },
   {
+    "CompanyName": "Swaraj Engines Ltd.",
+    "Industry": "IT",
+    "Symbol": "SWARAJENG"
+  },
+  {
     "CompanyName": "Symphony Ltd.",
     "Industry": "CONSUMER GOODS",
     "Symbol": "SYMPHONY"
@@ -2498,30 +2523,5 @@
     "CompanyName": "Zydus Wellness Ltd.",
     "Industry": "CONSUMER GOODS",
     "Symbol": "ZYDUSWELL"
-  },
-  {
-    "CompanyName": "eClerx Services Ltd.",
-    "Industry": "IT",
-    "Symbol": "ECLERX"
-  },
-  {
-    "CompanyName": "eClerx Services Ltd.",
-    "Industry": "IT",
-    "Symbol": "GMRINFRA"
-  },
-  {
-    "CompanyName": "eClerx Services Ltd.",
-    "Industry": "IT",
-    "Symbol": "KOPRAN"
-  },
-  {
-    "CompanyName": "eClerx Services Ltd.",
-    "Industry": "IT",
-    "Symbol": "KIRLOSENG"
-  },
-  {
-    "CompanyName": "eClerx Services Ltd.",
-    "Industry": "IT",
-    "Symbol": "SWARAJENG"
   }
 ]
